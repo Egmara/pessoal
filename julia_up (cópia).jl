@@ -1,0 +1,7 @@
+Pkg.clone("git://github.com/kbarbary/TimeIt.jl.git")
+Pkg.update()
+Pkg.add("Gadfly")
+Pkg.add("IJulia")
+Pkg.build("IJulia")
+println("")
+println("Concluido")
