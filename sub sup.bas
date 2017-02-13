@@ -60,23 +60,23 @@ Sub SalvarSubCriterio()
                 
                 If (Colunasub = 7) Then 'primeiro subcriteiro
                     Sheets("Critérios").Cells(LinhaCrit, Colunasub) = IDCrit & "S1"
+                    Subcritérios.Cells(Linhasub, 1) = IDCrit & "S1"
                 Else
                     'acha a posição do S no ID anterior
                     IDAnt = Sheets("Critérios").Cells(LinhaCrit, Colunasub - 1)
                     For i = 1 To Len(IDAnt)
-                    IndiceS = Len(IDAnt)
-                    If (Mid(IDAnt, i, 1) = s) Then
-                        IndiceS = i
+                        IndiceS = Len(IDAnt)
+                        If (Mid(IDAnt, i, 1) = s) Then
+                            IndiceS = i
                         End If
                     Next i
-                    ID = IDCrit & "S" & Right$(IDAnt, Len(IDAnt) - IndiceS + 1) + 1
     
-                    Critérios.Cells(LinhaCrit, Colunasub) = ID
-                    Subcritérios.Cells(Linhasub, 1) = ID
-    
+                    Critérios.Cells(LinhaCrit, Colunasub) = IDCrit & "S" & Right$(IDAnt, Len(IDAnt) - IndiceS + 1) + 1
+                    Subcritérios.Cells(Linhasub, 1) = IDCrit & "S" & Right$(IDAnt, Len(IDAnt) - IndiceS + 1) + 1
+                End If
                     Subcritérios.Cells(Linhasub, 2) = Questionario.Range("B22")
                     Subcritérios.Cells(Linhasub, 3) = Questionario.Range("B24")
-                End If
+
                 
                 '*-----------------------------------------------------------------------------------------------------------------
                 MsgBox "Subcritério adicionado com sucesso!"
@@ -142,7 +142,7 @@ Sub ExcluirSubcriterio()
     ultimo = Critérios.Range("A1").End(xlDown).Row - 2
     
     If (ultimo > 0) Then
-        UserFormCriterio.Show
+        UserFormCriterio.Show vbModeless
         
         If CritérioEscolhido <> 0 Then
             
@@ -154,7 +154,7 @@ Sub ExcluirSubcriterio()
             Wend
 
             If (ultimo_sub > 0) Then 'se o criterio tem subcriterio
-                UserFormSubcriterio.Show
+                UserFormSubcriterio.Show vbModeless
                 
                 If (SubcritérioEscolhido <> 0) Then
                     
