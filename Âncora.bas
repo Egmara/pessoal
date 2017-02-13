@@ -123,7 +123,7 @@ Sub EditarAncora()
     ultima = Âncoras.Range("A1").End(xlDown).Row - 2
     
     If (ultima > 0) Then
-        UserFormAncora.Show 'Altera EmpresaEscolhida
+        UserFormAncora.Show vbModeless 'Altera EmpresaEscolhida
         If (EmpresaEscolhida <> 0) Then
             'Questionário recebe os dados do banco de dados
             Questionario.Range("B5") = Âncoras.Cells(EmpresaEscolhida + 2, 2)
@@ -244,7 +244,7 @@ Sub VisualizarAncora()
     ultima = Sheets("Âncoras").Range("A1").End(xlDown).Row - 2
 
     If (ultima > 0) Then
-        UserFormAncora.Show
+        UserFormAncora.Show vbModeless
         
         If (EmpresaEscolhida <> 0) Then
             'Mostrar os dados do banco de dados para o usuário
@@ -312,7 +312,7 @@ Sub ExcluirAncora()
     ultima = Âncoras.Range("A1").End(xlDown).Row - 2
 
     If (ultima > 0) Then
-        UserFormAncora.Show
+        UserFormAncora.Show vbModeless
         
         If (EmpresaEscolhida <> 0) Then
             ID = Âncoras.Cells(EmpresaEscolhida + 2, 1)
@@ -359,7 +359,7 @@ Sub ExcluirAncora()
     
 End Sub
 Sub VoltarAncora()
-    Anc.Show
+    Anc.Show vbModeless
 End Sub
 
 

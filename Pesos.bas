@@ -7,7 +7,7 @@ Sub EscolherCriterios()
     'Crit é a posição do criteiro na lista de criterios
     If (ExisteSubcriterios) Then 'Existe ao menos um subcriterios
         If (Sheets("Âncoras").Range("A1").End(xlDown).Row - 2 > 0) Then
-            UserFormAncora.Show
+            UserFormAncora.Show vbModeless
             If (EmpresaEscolhida <> 0) Then
             Sheets("Escolha dos critérios").Select
         
@@ -264,7 +264,7 @@ Sub PreencherPeso()
 End Sub
 
 Sub LimparPeso()
-Pos = 100 'descomentar para limpar planilha caso aja bug
+'Pos = 100 'descomentar para limpar planilha caso aja bug
     For i = 1 To Sheets("Escolha dos critérios").DropDowns.Count
         Sheets("Escolha dos critérios").DropDowns.Delete
     Next i

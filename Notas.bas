@@ -5,7 +5,7 @@ Dim LinhaAncora As Integer
 Public Sub AvaliarFornecedor()
 
     If Sheets("Âncoras").Range("A1").End(xlDown).Row - 2 > 0 Then 'veficca se há ancoras
-        UserFormAncora.Show 'EmpresaEscolhida
+        UserFormAncora.Show vbModeless 'EmpresaEscolhida
         If EmpresaEscolhida <> 0 Then
         
             If (EncontraLinhaAncora <> 0) Then
@@ -13,7 +13,7 @@ Public Sub AvaliarFornecedor()
                 If (VerificaPesos(EncontraLinhaAncora)) Then
                 
                     If Sheets("Fornecedores").Range("A1").End(xlDown).Row - 2 > 0 Then 'verifica se há forncedores
-                        UserFormFornecedor.Show 'FornecedorEscolhido
+                        UserFormFornecedor.Show vbModeless 'FornecedorEscolhido
             
                         If FornecedorEscolhido <> 0 Then
                     
@@ -414,7 +414,7 @@ End Sub
 
 Sub VoltarAvaliar()
     LimparNota
-    Av1.Show
+    Av1.Show vbModeless
     
 End Sub
 
