@@ -63,7 +63,7 @@ Sub EditarCriterio()
     ultima = Critérios.Range("A1").End(xlDown).Row - 2
     
     If (ultima > 0) Then
-        UserFormCriterio.Show vbModeless 'Altera CriterioEscolhido
+        UserFormCriterio.Show 'Altera CriterioEscolhido
         
         If (CritérioEscolhido <> 0) Then
         
@@ -177,7 +177,7 @@ Sub ExcluirCriterio()
     ultima = Critérios.Range("A1").End(xlDown).Row - 2
     
     If (ultima > 0) Then
-        UserFormCriterio.Show vbModeless
+        UserFormCriterio.Show
         
         If (CritérioEscolhido <> 0) Then
        
@@ -214,40 +214,8 @@ Sub VoltarCriterio()
         Sheets("Subcritérios").Cells(ultima_linha_sub + 7 - i, 3) = ""
         i = i + 1
     Wend
-        Crit.Show vbModeless
+        Crit.Show
 End Sub
 
-Sub VerCriterios()
-    
-    Dim Critérios As Worksheet
-    Set Critérios = Sheets("Critérios")
-    
-    Dim Questionario As Worksheet
-    Set Questionario = Sheets("Novo Critério")
-    
-    '-------------------------------------------------------
-    
-    ultima = Critérios.Range("A1").End(xlDown).Row - 2
-    
-    If (ultima > 0) Then
-        UserFormCriterio.Show vbModeless 'Altera CriterioEscolhido
-        
-        If (CritérioEscolhido <> 0) Then
-        
-            'Questionário recebe os dados do banco de dados
-            Questionario.Range("B5") = Critérios.Cells(CritérioEscolhido + 2, 2)
-            Questionario.Range("B7") = Critérios.Cells(CritérioEscolhido + 2, 3)
-            Questionario.Range("B10") = Critérios.Cells(CritérioEscolhido + 2, 4)
-            Questionario.Range("B13") = Critérios.Cells(CritérioEscolhido + 2, 5)
-            Questionario.Range("B15") = Critérios.Cells(CritérioEscolhido + 2, 6)
-            
-        
-            Questionario.Select
-            Cells(2, 2).Select
-        End If
-        
-    Else
-        MsgBox "Não há critérios cadastrados!"
-    End If
-End Sub
+
 

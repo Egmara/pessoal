@@ -105,7 +105,7 @@ Sub EditarFornecedor()
     ultima = Fornecedores.Range("A1").End(xlDown).Row - 2
     
     If (ultima > 0) Then
-        UserFormFornecedor.Show vbModeless 'Altera FornecedorEscolhido
+        UserFormFornecedor.Show 'Altera FornecedorEscolhido
         If (FornecedorEscolhido <> 0) Then
             Questionario.Range("B5") = Fornecedores.Cells(FornecedorEscolhido + 2, 2)
             Questionario.Range("B7") = Fornecedores.Cells(FornecedorEscolhido + 2, 3)
@@ -190,7 +190,7 @@ Sub VisualizarFornecedor()
     ultima = Sheets("Fornecedores").Range("A1").End(xlDown).Row - 2
 
     If (ultima > 0) Then
-        UserFormFornecedor.Show vbModeless
+        UserFormFornecedor.Show
         If (FornecedorEscolhido <> 0) Then
         
             Modelo.Range("B5") = Fornecedores.Cells(FornecedorEscolhido + 2, 2)
@@ -239,7 +239,7 @@ Sub ExcluirFornecedor()
     ultima = Fornecedores.Range("A1").End(xlDown).Row - 2
 
     If (ultima > 0) Then
-        UserFormFornecedor.Show vbModeless
+        UserFormFornecedor.Show
         
         If (FornecedorEscolhido <> 0) Then
             
@@ -267,7 +267,7 @@ Sub ExcluirFornecedor()
     End If
 End Sub
 Sub VoltarFornecedor()
-    Forn.Show vbModeless
+    Forn.Show
 End Sub
 
 
