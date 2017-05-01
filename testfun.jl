@@ -306,7 +306,6 @@ funcoes=["30_70_45_095_100.mps";
 "rococoC11-011100.mps";
 "rococoC12-111000.mps";
 "roll3000.mps";
-"rvb-sub.mps";
 "satellites1-25.mps";
 "satellites2-60-fs.mps";
 "satellites2-60.mps";
