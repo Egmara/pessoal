@@ -1,6 +1,6 @@
 using Clp, JuMP, MathProgBase
 
-function testev1(fun)
+function testev1(func)
 mod = Model(solver=ClpSolver())
 m_internal = MathProgBase.LinearQuadraticModel(ClpSolver()) #tipo do solver
 
@@ -9,7 +9,7 @@ m_internal = MathProgBase.LinearQuadraticModel(ClpSolver()) #tipo do solver
 #for fun=1:length(funcoes) #para cada funçao
 #for fun=23:23
 
-    MathProgBase.loadproblem!(m_internal, fun) #carrega os dados da função
+    MathProgBase.loadproblem!(m_internal, func) #carrega os dados da função
 
     f = MathProgBase.getobj(m_internal)
     A = MathProgBase.getconstrmatrix(m_internal)
@@ -24,7 +24,7 @@ m_internal = MathProgBase.LinearQuadraticModel(ClpSolver()) #tipo do solver
 
     pode = true;
 
-println(fun)
+println(func)
     #println(funcoes2[fun])
     println("m = $m e n = $n e fun = $fun")
     println(size(A))
