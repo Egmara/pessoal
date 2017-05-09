@@ -9,6 +9,7 @@ m_internal = MathProgBase.LinearQuadraticModel(ClpSolver()) #tipo do solver
 #for fun=1:length(funcoes) #para cada funçao
 #for fun=23:23
 
+
     MathProgBase.loadproblem!(m_internal, func) #carrega os dados da função
 
     f = MathProgBase.getobj(m_internal)
@@ -26,7 +27,7 @@ m_internal = MathProgBase.LinearQuadraticModel(ClpSolver()) #tipo do solver
 
 println(func)
     #println(funcoes2[fun])
-    println("m = $m e n = $n e fun = $fun")
+    println("m = $m e n = $n e fun = $func")
     println(size(A))
 
   for i = 1:m
