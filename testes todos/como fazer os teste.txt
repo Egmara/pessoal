@@ -1,0 +1,3 @@
+include("testev6.jl")
+lista,Fxi,Tempoi,Dadosi = testev6_2()
+[["Funçao" "linhas" "colunas" "folga" "fxLU" "fxLUUp" "fxUpFact" "fxLUFact" "tLU" "tLUUp" "tUpFact" "tLUFact"];lista Dadosi Fxi Tempoi]
