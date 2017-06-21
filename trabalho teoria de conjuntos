@@ -1,0 +1,96 @@
+\documentclass[12pt,a4paper]{article}
+
+%----------------------------------------------------
+% as duas linhasabaixo devem garantir a acentuação em português, caso não compile o PDF,
+% tente comentar/apagar a linha \usepackage[utf8]{inputenc} ou então use os pacotes de
+% idiomas que você está acostumado (como latin1 e brazil).
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+%----------------------------------------------------
+
+\usepackage[portuguese, ruled, linesnumbered]{algorithm2e}
+
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{listings}
+\usepackage{subfig}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyvrb}
+
+\newtheorem{teorema}{Teorema}     
+\newtheorem{definicao}{Definição}
+\usepackage{threeparttable}
+\usepackage[portuguese, ruled, linesnumbered]{algorithm2e}
+\usepackage{setspace}
+\usepackage{float}
+
+\usepackage[style=ieee,backend=bibtex,sorting=none]{biblatex}
+\DefineBibliographyStrings{portuguese}{
+  references = {Bibliografia},
+}
+\addbibresource{refs.bib}
+
+% Um pacote de comandos auxiliares
+\usepackage{auxiliares}
+\usepackage{amsmath, amsfonts, bbm, amssymb, amsthm}
+\usepackage{lmodern}
+\renewcommand{\rmdefault}{phv} % Arial
+\renewcommand{\sfdefault}{phv} % Arial
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{authblk}
+\usepackage{textcomp}
+\setlength{\affilsep}{0mm}
+\newcommand\SLASH{\char`\\}
+
+\title{Teoria de Conjuntos - Axiomas de Zermelo-Fraenkel mais o Axioma da Escolha}
+
+\author{Andre A. Buhler}
+  \affil{ Matem\'atica Industrial - UFPR}
+
+
+\date{}
+\begin{document}
+
+\maketitle
+    {\bf Resumo}\\
+    Criada por Georg Cantor, a teoria de conjuntos necessitava de uma base sólida a fim de evitar paradoxos e inconsistências. Através dos axiomas propostos por Zermelo, complementados por Skolem, Franenkel e von Neumann, foram criados o sistema de axiomas conhecidos como ZFC, axiomas de Zermelo-Fraenkel mais o Axioma da Escolha.
+    
+  
+    \section{Introdução}
+    %\cite{artigo:stanford}
+        A teoria de conjuntos como uma disciplina a parte da matemática começou com o trabalho de Georg Cantor no ano de 1873. Ele descobriu que a reta real não é contável, isto é, seus pontos não podem ser contados usando números naturais apesar de ambos serem infinitos, mostrando-se assim a existência de diferentes tipos de infinitos.
+   
+        No início, algumas inconsistências ou paradoxos surgiram pelo uso ingênuo da noção de conjuntos sendo assim necessário construir sobre uma base solida os princí-pios básicos da teoria de conjuntos fundamentados ao Principio da Boa-Ordenação de Cantor. A primeira axiomatização veio de Zermelo (1908), sendo complementada por Skolem e Fraenkel e mais tarde por von Neumann, levando a criação do sistema de axiomas padrão da teoria de conjuntos, conhecido como axiomas de Zermelo-Fraenkel mais o Axioma da Escolha, ou ZFC. 
+    
+    \section{Axiomas da Teoria de conjuntos}
+        ZFC é um sistema de axiomas formulado em lógica de primeira ordem com igualdade e com apenas um símbolo de relação binária $\in$ para adesão%arrumar.
+        Assim, se $A$ é um membro do conjunto $B$, então $A\in B$.
+        
+        \subsection{Os axiomas de ZFC}
+        \begin{itemize}
+            \item {\bf Axioma da Extensão:} $\forall x\forall y[\forall z(z \in x \leftrightarrow z \in y) \leftarrow x = y]$ (se $x$ e $y$ possuem os mesmos membros, então $x$ e $y$ são o mesmo conjunto.
+            \item {\bf Conjunto Nulo:} $\exists x \lnot \exists y(y \in x)$ %∃x∀y¬(y∈x) ou ∃x¬∃y(y∈x)
+            \item {\bf Axioma do Par:} $\forall x \forall y \exists z \forall w (w \in \leftrightarrow w=x \vee w=y)$ %(∀x∀y∃z∀w(w∈z↔w=x∨w=y) ou ∀ x ∀ y ∃ z ( x ∈ z ∧ y ∈ z ) {\displaystyle \forall x\forall y\exists z(x\in z\land y\in z)} \forall x \forall y \exist z (x \in z \land y \in z)             \varnothing =\{u\in w\mid (u\in u)\land \lnot (u\in u)\}. 
+            \item {\bf Axioma da Potencia:}$\forall x \exists y \forall z (z \subseteq x \rightarrow z \in y)$
+            \item {\bf Axioma da União:}$\forall \mathcal{F} \,\exists A \, \forall Y\, \forall x (x \in Y \land Y \in \mathcal{F} \rightarrow x \in A)$
+            \item {\bf Axioma do Infinito:}$\exists x ( \varnothing \in x \land \forall y \in x ( S(y) \in x))$
+            \item {\bf Axioma da Separação:}$\forall z \forall w_1 \ldots w_n \exists y \forall x (x \in y \iff ( x \in z \land \phi ) )$ Formalizado por Skolem e Fraenkel termos de fórmulas de primeira ordem, em vez da noção informal de propriedade
+            \item {\bf Axioma da Substituição:}$\forall A\,\forall w_1,\ldots,w_n [ \forall x \in A \exists ! y \phi \rightarrow \exists Y \forall x \in A \exists y \in Y \phi]$
+            \item {\bf Axioma da Regularidade (Fundação):}$\forall x[\exists y(y\in x)\rightarrow \exists y(y\in x\land \lnot \exists z(z\in y\land z\in x))]$
+            \item {\bf Axioma da Escolha:}$    \forall A \exists R ( R \;\mbox{well-orders}\; A)$
+        \end{itemize} 
+    Estes são os axiomas da teoria dos conjuntos de Zermelo-Fraenkel, ou ZF. Os axiomas do Conjunto Nulo e do Par seguem dos outros axiomas de ZF, portanto podem ser omitidos. Além disso, Substituição implica Separação. %mostrar
+    
+    O Axioma da Escolha foi, por muito tempo, um axioma controverso,pois apesar descer muito útil e de uso amplo em matemática sendo equivalente ao {\it Princípio de Boa-Ordenação}, possui consequências pouco intuitivas.
+    
+    \section{Shifting Axiomatizations for Set Theory}
+    Em 1904, quando Zermelo propôs o Axioma da Escolha, ele ainda estava trabalhando em grande parte dentro de uma tradição cantoriana onde a lógica não era vista como relevante. A primeira transformação da natureza da teoria de conjuntos ocorreu em meados de 1906 por Zermelo. Utilizando como meio principal a tradição Hilbertiana axiomática e motivado pelo desejo de assegurar seus axioma contra as inúmeras criticas, incorporou os axiomas em um sistema de postulado para a teoria dos conjuntos como um todo. %Assim, a teoria dos conjuntos axiomáticos foi separada da criação original do Cantor, que von Neumann mais tarde dublará a teoria dos conjuntos ingênuos %(Thus axiomatic set theory was separated from canto's original creation, which von Neumann later dubber naive set theory).
+    Contudo, vários matemáticos criticam o sistema  de Zermelo e alguns deles, incluindo Fraekel e Skolem, sugeriram ambos modificações internas e axiomas adicionais.
+    
+
+
+    
+    \newpage
+    \printbibliography
+  
+\end{document}
