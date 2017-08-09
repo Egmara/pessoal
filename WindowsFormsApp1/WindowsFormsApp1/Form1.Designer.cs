@@ -266,7 +266,7 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.trackBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
             this.trackBar1.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.trackBar1, "trackBar1");
             this.trackBar1.LargeChange = 12;
@@ -279,7 +279,7 @@
             // label10
             // 
             resources.ApplyResources(this.label10, "label10");
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(199)))), ((int)(((byte)(199)))));
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Cursor = System.Windows.Forms.Cursors.Default;
             this.label10.Name = "label10";
@@ -330,7 +330,7 @@
             // 
             // trackBar2
             // 
-            this.trackBar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.trackBar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(200)))));
             this.trackBar2.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.trackBar2, "trackBar2");
             this.trackBar2.LargeChange = 12;
@@ -343,7 +343,7 @@
             // label11
             // 
             resources.ApplyResources(this.label11, "label11");
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(200)))));
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.Cursor = System.Windows.Forms.Cursors.Default;
             this.label11.Name = "label11";
