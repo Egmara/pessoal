@@ -503,7 +503,7 @@
             // label21
             // 
             resources.ApplyResources(this.label21, "label21");
-            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.label21.ForeColor = System.Drawing.SystemColors.Control;
             this.label21.Name = "label21";
             // 
